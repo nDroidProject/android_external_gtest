@@ -30,7 +30,7 @@ $(foreach file,$(1), \
   $(eval LOCAL_SRC_FILES := $(file)) \
   $(eval LOCAL_C_INCLUDES := $(LOCAL_PATH)/../include $(LOCAL_PATH)/..) \
   $(eval LOCAL_MODULE := $(notdir $(file:%.cc=%))) \
-  $(eval LOCAL_CFLAGS += $(3)) \
+  $(eval LOCAL_CFLAGS += $(3) -fpermissive) \
   $(eval LOCAL_STATIC_LIBRARIES := libgtest_main libgtest) \
   $(eval LOCAL_MODULE_TAGS := tests) \
   $(eval include $(BUILD_$(2)EXECUTABLE)) \
